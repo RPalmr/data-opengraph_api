@@ -13,7 +13,7 @@ def fetch_metadata(url):
     try:
         response = requests.get(url1)
         return response.json()['data']
-    except:
+    except: # pylint: disable=bare-except
         return {}
 
 # To manually test, please uncomment the following lines and run `python opengraph.py`:
