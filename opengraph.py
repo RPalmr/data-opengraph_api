@@ -9,7 +9,13 @@ def fetch_metadata(url):
     """
     Return a dictionary of OpenGraph metadata found in HTML of given url
     """
-    pass  # YOUR CODE HERE
+    try:
+        response = requests.get(url)
+        if response.status_code == 200:
+            return response.json()
+    except Exception:
+        pass
+    return {}
 
 # To manually test, please uncomment the following lines and run `python opengraph.py`:
 # import pprint
