@@ -9,9 +9,10 @@ def fetch_metadata(url):
     """
     Return a dictionary of OpenGraph metadata found in HTML of given url
     """
+    url1 = f'https://opengraph.lewagon.com/?url={url}'
     try:
-        response = requests.get(url)
-        return response.json()
+        response = requests.get(url1)
+        return response.json()['data']
     except:
         return {}
 
